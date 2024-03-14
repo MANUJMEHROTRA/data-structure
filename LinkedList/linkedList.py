@@ -54,7 +54,16 @@ class LinkedList:
             currentNode.next = currentNode.next.next
         
         
-        
+    def checkIfCircular(self,val):
+        if self.head is None:
+            return self.head
+        dummyNode =Node(None)
+        dummyNode.next = self.head
+        currentNode = dummyNode
+        while currentNode.val == val and currentNode is not None:
+                currentNode = currentNode.next
+        if currentNode.next:
+            currentNode.next = currentNode.next.next    
 
 
 if __name__ == '__main__':
